@@ -2,3 +2,80 @@
     font-weight: 500;
 }
 
+
+textarea{
+    resize: none;
+    border: none;
+    padding: 8px 41px;
+    border: #000000 solid 2px;
+}
+
+body{
+    background-color: #897c78;
+    font-family: FreeMono, monospace;
+}
+.card{
+    margin-bottom: 30px;
+    margin-top: 25px;
+    background-color: #EDF2F7 ;
+    border: #000000 solid 2px;
+    padding: 18px;
+
+}
+
+#columns{
+    display: flex;
+}
+.column{
+    width: 25%;
+    text-align: center;
+    padding: 0 20px;
+}
+.change{
+    border-top: rgb(0, 0, 0) 2px dotted;
+    margin-top: 20px;
+}
+ul{
+    padding: 0;
+    margin-bottom: 0px;
+}
+li{
+    list-style-type: none;
+    margin: 10px;
+}
+button{
+    padding: 9px 20px;
+    border: none;
+    background-color: #ffffff;
+    margin-top: 15px;
+}
+button:hover{
+    background-color: #000000;
+    cursor: pointer;
+    transition: 0.5s;
+    color: #ffffff;
+}
+#inTime{
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+}
+#notInTime {
+    color: firebrick;
+    text-decoration: underline;
+}
+.title{
+    margin-bottom: 25px;
+}
+#form {
+    margin: 50px 0;
+    display: block;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.button{
+    padding: 9px 20px;
+    border: none;
+    background-color: #434343;
+    margin-top: 15px;
+    margin-bottom: -40px;
+}
