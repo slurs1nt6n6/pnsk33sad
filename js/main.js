@@ -57,7 +57,7 @@ Vue.component('cards-kanban', {
     }
 })
 
-
+//asd
 let app = new Vue({
     el:'#app',
     data:{
