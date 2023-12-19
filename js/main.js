@@ -243,6 +243,95 @@ Vue.component('column2', {
     },
 })
 
+Vue.component('column3', {
+    props:{
+        column3:{
+            type: Array,
+            required: true
+        },
+        card:{
+            type:Object,
+            required: true
+        },
+        reason:{
+            type:Array,
+            required: true
+        }
+    },
+
+    template:`
+    <div class="column">
+        <h3>Тестирование</h3>
+        <div class="card" v-for="card in column3">
+            <ul>
+                <li class="title"><b>Заголовок:</b> {{ card.title }}</li>
+                <li><b>Описание задачи:</b> {{ card.description }}</li>
+                <li><b>Дата дедлайна:</b> {{ card.dateD }}</li>
+                <li><b>Дата создания:</b> {{ card.dateC }}</li>
+                <li v-if="card.dateL"><b>Дата последних изменений: </b>{{ card.dateL }}</li>
+                <li v-if="card.reason.length"><b>Комментарии: </b><li v-for="r in card.reason">{{ r }}</li></li>
+                <li v-if="moveBack">
+                    <form @submit.prevent="onSubmit(card)">
+                        <textarea v-model="reason2" cols="20" rows="4"></textarea>
+                        <input class="button" type="submit" value="Сохранить">
+                    </form>
+                </li>
+                <button @click="updateC(card)">Изменить</button>
+                 <div class="change" v-if="card.updateCard">
+                    <form @submit.prevent="updateTask(card)">
+                        <p>Введите заголовок: 
+                            <input type="text" v-model="card.title" maxlength="30" placeholder="Заголовок">
+                        </p>
+                        <p>Добавьте описание задаче: 
+                            <textarea v-model="card.description" cols="20" rows="5"></textarea>
+                        </p>
+                        <p>Укажите дату дедлайна: 
+                            <input type="date" v-model="card.dateD">
+                        </p>
+                        <p>
+                              <input class="button" type="submit" value="Изменить карточку">
+                        </p>
+                    </form>
+                </div>
+            </ul>
+            <button @click="movingBack">Сдвиг влево</button>
+            <button @click="moving(card)">Сдвиг вправо</button>
+        </div>    
+    </div>
+    `,
+
+    data(){
+        return{
+            moveBack: false,
+            reason2: null
+        }
+    },
+    methods: {
+        updateC(card){
+            card.updateCard = true
+            console.log(card.updateCard)
+        },
+        updateTask(card){
+            this.column3.push(card)
+            this.column3.splice(this.column3.indexOf(card), 1)
+            card.dateL = new Date().toLocaleString()
+            return card.updateCard = false
+        },
+        moving(card){
+            eventBus.$emit('moving3-4', card)
+        },
+        movingBack(){
+            this.moveBack = true
+        },
+        onSubmit(card) {
+            card.reason.push(this.reason2)
+            eventBus.$emit('moving3-2', card)
+            this.reason2 = null
+            this.moveBack = false
+        }
+    },
+})
+
 let app = new Vue({
     el:'#app',
     data:{
