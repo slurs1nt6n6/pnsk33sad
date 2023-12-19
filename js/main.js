@@ -61,7 +61,7 @@ Vue.component('fill', {
     template:`
     <div>
     <div>
-        <button v-if="!show" @click="openModal">Добавьте задачу</button>
+        <button class="button1" v-if="!show" @click="openModal">Добавьте задачу</button>
         <div id="form" v-if="show" class="modal-shadow">
             <div class="modal">
                 <div class="modal-close" @click="closeModal">&#10006;</div>

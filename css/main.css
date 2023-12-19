@@ -20,6 +20,8 @@ body{
     background-color: #EDF2F7 ;
     border: #000000 solid 2px;
     padding: 18px;
+    border-radius: 5px;
+
 
 }
 
@@ -30,6 +32,7 @@ body{
     width: 25%;
     text-align: center;
     padding: 0 20px;
+    border-radius: 5px;
 }
 .change{
     border-top: rgb(0, 0, 0) 2px dotted;
@@ -48,6 +51,12 @@ button{
     border: none;
     background-color: #ffffff;
     margin-top: 15px;
+    border-radius: 5px;
+
+}
+.button1{
+    left: 45%;
+    position: relative;
 }
 button:hover{
     background-color: #000000;
@@ -71,6 +80,7 @@ button:hover{
     display: block;
     text-align: center;
     margin-bottom: 70px;
+
 }
 .button{
     padding: 9px 20px;
@@ -78,16 +88,20 @@ button:hover{
     background-color: #434343;
     margin-top: 15px;
     margin-bottom: -40px;
+    border-radius: 5px;
+
 }
 input{
     border: none;
     border: #48523D solid 2px;
     width: 200px;
     padding: 10px 12px;
+
 }
 
 .pForm{
     margin-top: 35px;
+
 }
 
 /*модальное окно*/
@@ -99,6 +113,8 @@ input{
     width: 100%;
     background: rgba(0, 0, 0, 0.39);
     margin-top: -70px;
+    border-radius: 5px;
+
 }
 
 .modal {
@@ -110,8 +126,18 @@ input{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+    opacity: 1; /* по умолчанию модальное окно прозрачно */
+    -webkit-transition: opacity 200ms ease-in;
+    -moz-transition: opacity 200ms ease-in;
+    transition: opacity 200ms ease-in; /* анимация перехода */
+    border-radius: 5px;
 
+}
+.modal:target {
+    opacity: 1; /* делаем окно видимым */
+    pointer-events: auto; /* элемент видим для событий мыши */
+    overflow-y: auto; /* добавляем прокрутку по y, когда элемент не помещается на страницу */
+}
 .modal-close{
     border-radius: 32%;
     color: #000000;
@@ -127,9 +153,10 @@ input{
     cursor: pointer;
 }
 .card{
-    background-color: #0e0e0e;
-    color: #EDF2F7;
+    background-color: #ffffff;
+    color: #00000;
 }
+
 h3{
     color: #000000;
 }
