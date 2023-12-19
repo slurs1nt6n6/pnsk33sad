@@ -1,0 +1,33 @@
+*{
+    font-weight: 500;
+}
+
+
+textarea{
+    resize: none;
+    border: none;
+    padding: 8px 41px;
+    border: #000000 solid 2px;
+}
+
+body{
+    background-color: #897c78;
+    font-family: FreeMono, monospace;
+}
+.card{
+    margin-bottom: 30px;
+    margin-top: 25px;
+    background-color: #EDF2F7 ;
+    border: #000000 solid 2px;
+    padding: 18px;
+
+}
+
+#columns{
+    display: flex;
+}
+.column{
+    width: 25%;
+    text-align: center;
+    padding: 0 20px;
+}
