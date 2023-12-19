@@ -61,7 +61,12 @@ Vue.component('fill', {
     template:`
     <div>
     <div>
-        <button v-if="!show" @click="openModal">Дta
+        <button v-if="!show" @click="openModal">Добавьте задачу</button>
+        <div id="form" v-if="show" class="modal-shadow">
+            <div class="modal">
+                <div class="modal-close" @click="closeModal">&#10006;</div>
+                <h3>Заполните карточку задачи</h3>
+                <form @submit.prevent="onSubmit">
                     <p class="pForm">Введите заголовок: 
                         <input required type="text" v-model="title" maxlength="30" placeholder="Заголовок">
                     </p>
@@ -114,6 +119,7 @@ Vue.component('fill', {
         }
     }
 })
+
 Vue.component('column1', {
     props:{
         card: {
@@ -154,7 +160,7 @@ Vue.component('column1', {
                     </form>
                 </div>
              </ul>
-            <button @click="moving(card)">--></button>
+            <button @click="moving(card)">переместить</button>
         </div>
     </div>
     `,
@@ -222,7 +228,8 @@ Vue.component('column2', {
                     </form>
                 </div>
             </ul>
-             <button @click="moving(card)">--></button>
+            
+             <button @click="moving(card)">переместить</button>
         </div>        
     </div>
     `,
@@ -330,7 +337,6 @@ Vue.component('column3', {
             this.moveBack = false
         }
     },
-
 })
 
 Vue.component('column4', {
@@ -364,7 +370,6 @@ Vue.component('column4', {
 
     },
 })
-
 
 let app = new Vue({
     el:'#app',

@@ -79,3 +79,57 @@ button:hover{
     margin-top: 15px;
     margin-bottom: -40px;
 }
+input{
+    border: none;
+    border: #48523D solid 2px;
+    width: 200px;
+    padding: 10px 12px;
+}
+
+.pForm{
+    margin-top: 35px;
+}
+
+/*модальное окно*/
+.modal-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.39);
+    margin-top: -70px;
+}
+
+.modal {
+    background: #ffffff;
+    padding: 15px;
+    min-width: 420px;
+    max-width: 480px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-close{
+    border-radius: 32%;
+    color: #000000;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.card{
+    background-color: #0e0e0e;
+    color: #EDF2F7;
+}
+h3{
+    color: #000000;
+}
